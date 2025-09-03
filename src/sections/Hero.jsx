@@ -102,7 +102,7 @@ const VideoCard = ({ video, index }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="w-64 h-80 bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl overflow-hidden shadow-2xl border border-gray-700">
+      <div className="w-70 h-100 bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl overflow-hidden shadow-2xl border border-gray-700">
         <video
           ref={videoRef}
           className="w-full h-full object-cover"
@@ -246,8 +246,7 @@ const Hero = () => {
             {/* Smaller Description */}
             <div className="relative max-w-3xl">
               <p className="hero-description text-gray-400 text-base md:text-lg leading-relaxed mb-8">
-                We start by listening to your audience,then we create content buckets that capture their attention and distribute them where they'll matter most. With recall in place, ads drive sales while micro-campaigns and UGC build loyalty, creating both immediate growth and long-term lifetime value
-              </p>
+              We listen to your audience, craft engaging content, and place it where it matters most. Ads drive sales while micro-campaigns and UGC build loyalty for lasting growth.</p>
             </div>
 
             {/* Enhanced CTA Button */}
