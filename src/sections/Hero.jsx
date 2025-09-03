@@ -106,11 +106,70 @@ const VideoCard = ({ video, index }) => {
 
 const Hero = () => {
   useGSAP(() => {
+    // Animate hero title words with stagger
     gsap.fromTo(
-      ".hero-text h1",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
+      ".hero-title span",
+      { y: 100, opacity: 0, rotateX: 90 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        rotateX: 0,
+        stagger: 0.3, 
+        duration: 1.2, 
+        ease: "power3.out",
+        delay: 0.5
+      }
     );
+
+    // Animate the dots between words
+    gsap.fromTo(
+      ".hero-dot",
+      { scale: 0, opacity: 0 },
+      { 
+        scale: 1, 
+        opacity: 1, 
+        stagger: 0.2, 
+        duration: 0.8, 
+        ease: "back.out(1.7)",
+        delay: 1.5
+      }
+    );
+
+    // Animate description text
+    gsap.fromTo(
+      ".hero-description",
+      { y: 30, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        ease: "power2.out",
+        delay: 2
+      }
+    );
+
+    // Animate CTA button
+    gsap.fromTo(
+      ".hero-cta",
+      { y: 30, opacity: 0, scale: 0.8 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        scale: 1,
+        duration: 0.8, 
+        ease: "back.out(1.7)",
+        delay: 2.3
+      }
+    );
+
+    // Continuous floating animation for the main title
+    gsap.to(".hero-title", {
+      y: -10,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power2.inOut"
+    });
   });
 
   return (
@@ -122,53 +181,43 @@ const Hero = () => {
 
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Centered Hero Content */}
-        <header className="flex-1 flex items-center justify-center w-full md:px-20 px-5">
-          <div className="mx-auto max-w-5xl flex flex-col items-center text-center gap-7">
-            <div className="hero-text">
-              <h1 className="text-5xl md:text-7xl font-bold mb-4">
-                <span className="text-white">
-                  Elevating
-                </span>
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center justify-center md:gap-3 gap-1 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt={`${word.text} icon`}
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                        />
-                        <span className="text-cyan-400">{word.text}</span>
-                      </span>
-                    ))}
-                  </span>
-                </span>
+        <header className="flex-1 flex items-center justify-center w-full md:px-20 px-5 mt-16">
+          <div className="mx-auto max-w-6xl flex flex-col items-center text-center gap-8">
+            
+            {/* Large ATTENTION RECALL REVENUE */}
+            <div className="relative mb-8 z-10">
+              <h1 className="hero-title text-5xl md:text-7xl lg:text-6xl xl:text-6xl font-bold text-white mb-4 leading-tight uppercase tracking-wider">
+                <span className="inline-block text-white">ATTENTION</span>
+                <span className="hero-dot text-gray-400 mx-4">•</span>
+                <span className="inline-block text-white/90">RECALL</span>
+                <span className="hero-dot text-gray-400 mx-4">•</span>
+                <span className="inline-block text-white/80">REVENUE</span>
               </h1>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">into Powerful Brands</h1>
-              <h1 className="text-5xl md:text-7xl font-bold text-white">that Drive Growth</h1>
+            </div> 
+
+            {/* Smaller Description */}
+            <div className="relative max-w-3xl">
+              <p className="hero-description text-gray-400 text-base md:text-lg leading-relaxed mb-8">
+                We start by listening to your audience,then we create content buckets that capture their attention and distribute them where they'll matter most. With recall in place, ads drive sales while micro-campaigns and UGC build loyalty, creating both immediate growth and long-term lifetime value
+              </p>
             </div>
 
-            <p className="text-gray-300 md:text-xl max-w-3xl leading-relaxed mb-8">
-              Welcome to Elation, a results-driven marketing firm passionate about
-              building memorable brands that connect and convert.
-            </p>
+            {/* Enhanced CTA Button */}
+            <div className="hero-cta relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 rounded-full blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+              <button className="relative inline-flex h-14 md:h-16 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-black transition-all duration-300 hover:scale-105">
+                <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_25%,#FF6B6B_50%,#4ECDC4_75%,#E2CBFF_100%)]" />
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-base md:text-lg font-semibold text-white backdrop-blur-3xl transition-all duration-300 hover:bg-gray-900">
+                  <span className="mr-2">Book a call</span>
+                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </button>
+            </div>
 
-            {/*<Button
-              text="Explore Our Services"
-              className="md:w-80 md:h-16 w-60 h-12 mb-12"
-              id="cta-button"
-            />*/}
-            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                Book a call
-              </span>
-            </button>
           </div>
-        </header>
+        </header> 
 
         {/* Video Cards Section - Below Hero Text */}
         <div className="relative w-full py-20">
@@ -185,7 +234,7 @@ const Hero = () => {
         </div>
 
         <AnimatedCounter />
-      </div>
+      </div> 
 
       {/* CSS for float animation */}
       <style>{`
