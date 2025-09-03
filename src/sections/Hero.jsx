@@ -49,6 +49,32 @@ const videoCards = [
     position: "right-[5%] top-[20%]",
     delay: 1,
     rotation: -3
+  },
+  {
+    id: 6,
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "CREATIVE MINDS",
+    label: "Studio Works",
+    position: "left-[15%] top-[25%]",
+    delay: 1.2,
+    rotation: 2
+  },
+  {
+    id: 7,
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "DIGITAL GROWTH",
+    subtitle: "Scale Up",
+    position: "right-[15%] top-[25%]",
+    delay: 1.4,
+    rotation: -4
+  },
+  {
+    id: 8,
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "BRAND EVOLUTION",
+    position: "center top-[30%]",
+    delay: 1.6,
+    rotation: 1
   }
 ];
 
@@ -68,7 +94,7 @@ const VideoCard = ({ video, index }) => {
 
   return (
     <div
-      className="relative group cursor-pointer transform transition-all duration-300 hover:scale-105"
+      className="video-card relative group cursor-pointer transform transition-all duration-300 hover:scale-105"
       style={{
         animation: `float ${3 + index * 0.5}s ease-in-out infinite`,
         animationDelay: `${video.delay}s`
@@ -170,6 +196,28 @@ const Hero = () => {
       yoyo: true,
       ease: "power2.inOut"
     });
+
+    // Scroll-based horizontal movement for video cards
+    gsap.utils.toArray(".video-card").forEach((card, index) => {
+      const isEven = index % 2 === 0;
+      gsap.fromTo(card, 
+        { 
+          x: isEven ? -200 : 200,
+          opacity: 0.6 
+        },
+        {
+          x: isEven ? 200 : -200,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: ".video-grid",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 2,
+            ease: "none"
+          }
+        }
+      );
+    });
   });
 
   return (
@@ -225,7 +273,7 @@ const Hero = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
               Our Work Showcase
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
+            <div className="video-grid flex gap-4 overflow-x-auto scrollbar-hide py-4">
               {videoCards.map((video, index) => (
                 <VideoCard key={video.id} video={video} index={index} />
               ))}
@@ -252,3 +300,4 @@ const Hero = () => {
 };
 
 export default Hero;
+ 
