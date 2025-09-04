@@ -23,6 +23,8 @@ const offeringCards = [
     testimonial: "Their strategic approach doubled our lead generation in just one quarter. Invaluable partnership!",
     clientName: "Sarah Johnson",
     clientTitle: "CEO, Innovate Co.",
+    clientLogo: "/images/client1.png",
+    timelineLogo: "/images/logo1.png",
   },
   {
     title: "Social Media Management",
@@ -36,6 +38,8 @@ const offeringCards = [
     testimonial: "Our social engagement is up 300%. They truly understand our brand voice and our audience.",
     clientName: "David Lee",
     clientTitle: "Marketing Director, FusionWear",
+    clientLogo: "/images/client2.png",
+    timelineLogo: "/images/logo2.png",
   },
   {
     title: "Search Engine Optimization (SEO)",
@@ -49,6 +53,53 @@ const offeringCards = [
     testimonial: "We hit the first page for our top keywords within six months. The results speak for themselves.",
     clientName: "Emily Chen",
     clientTitle: "Founder, Bloom & Stem",
+    clientLogo: "/images/client3.png",
+    timelineLogo: "/images/logo3.png",
+  },
+  {
+    title: "Editing & Distribution",
+    subtitle: "Multi-Platform Content Strategy & Rapid Turnaround.",
+    benefits: [
+      "In-house team of 3 editors, supported by 11 freelance collaborators.",
+      "Turn around 3 months' worth of content within 15 days.",
+      "Multi-platform strategy: main brand page, hyperlocal pages for testing.",
+      "Collaborator reposting content to extend reach and recall.",
+    ],
+    testimonial: "Their editing team transformed our raw content into engaging stories. The turnaround time is incredible!",
+    clientName: "Michael Torres",
+    clientTitle: "Content Director, Brand Studios",
+    clientLogo: "/images/client4.png",
+    timelineLogo: "/images/logo1.png",
+  },
+  {
+    title: "Performance Marketing",
+    subtitle: "A/B Testing Approach for Measurable ROI & ROAS.",
+    benefits: [
+      "Classic A/B testing approach to refine creatives and funnels.",
+      "Scale what works from awareness to engagement and conversions.",
+      "Every rupee spent drives measurable ROI while reducing CAC.",
+      "Continuous optimization to improve ROAS across all campaigns.",
+    ],
+    testimonial: "Our ROAS improved by 250% in just 3 months. They know exactly how to scale what works.",
+    clientName: "Lisa Wang",
+    clientTitle: "Performance Marketing Lead, GrowthTech",
+    clientLogo: "/images/client5.png",
+    timelineLogo: "/images/logo2.png",
+  },
+  {
+    title: "Insights & Optimization",
+    subtitle: "Data-Driven Campaign Refinement & Continuous Improvement.",
+    benefits: [
+      "Track CPM, ROAS, CTR, hook rates, engagement metrics, CPL, and ROI.",
+      "Monitor every relevant KPI for comprehensive performance analysis.",
+      "Refresh creatives and reallocate budgets based on data insights.",
+      "Sharpen campaigns continuously for compounding results.",
+    ],
+    testimonial: "Their insights helped us identify bottlenecks we never knew existed. Our campaign performance is now exceptional.",
+    clientName: "Alex Rodriguez",
+    clientTitle: "Analytics Manager, DataFlow Inc.",
+    clientLogo: "/images/client6.png",
+    timelineLogo: "/images/logo3.png",
   },
 ];
 const Solutions = () => {
@@ -141,7 +192,7 @@ const Solutions = () => {
         {/* FIX 1: Added a flex container to prevent overlap and manage spacing */}
         <div className="flex flex-col items-center gap-16">
           <TitleHeader
-            title="Our Core Services"
+            title=" Our Process"
             sub="💡 Engineering the Digital Future of Your Business"
           />
 
@@ -159,7 +210,7 @@ const Solutions = () => {
                         </p>
                         <div className="mt-6">
                           <img
-                            src="/images/logo2.png" // This is your client's logo
+                            src={card.clientLogo}
                             alt="Client Logo"
                             className="w-12 h-12 mx-auto rounded-full"
                           />
@@ -178,7 +229,7 @@ const Solutions = () => {
                       <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                         <div className="timeline-logo">
                           {/* This is your company's logo for the timeline */}
-                          <img src="/images/logo1.png" alt="logo" />
+                          <img src={card.timelineLogo} alt="logo" />
                         </div>
                         <div>
                           <h1 className="font-semibold text-3xl">{card.title}</h1>

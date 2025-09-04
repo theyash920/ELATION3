@@ -1,19 +1,21 @@
+import boatImg from '../images/boat.jpg';
+
 const navLinks = [
   {
-    name: "Work",
-    link: "#work",
+    name: "Home",
+    link: "#hero",
   },
   {
     name: "Solutions",
     link: "#solutions",
   },
   {
-    name: "Values",
-    link: "#values",
+    name: "Resources",
+    link: "/resources",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    name: "Careers",
+    link: "/careers",
   },
 ];
 
@@ -32,7 +34,7 @@ const counterItems = [
   { value: 187, suffix: "M+", label: "Impressions Generated" },
   { value: 83, suffix: "+", label: "Accounts Managed" },
   { value: 670, suffix: "+", label: "Creatives Delivered" },
-  { value: 5, suffix: "%", label: "Countries" }, 
+  { value: 5, suffix: "+", label: "Countries" },
 ];
 
 const logoIconsList = [
@@ -88,6 +90,7 @@ const abilities = [
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
   },
 ];
+
 
 const techStackImgs = [
   {
@@ -204,42 +207,42 @@ const testimonials = [
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "I can’t say enough good things about Elation. They were able to take our complex marketing goals and turn them into a seamless, effective campaign. Their strategic thinking and problem-solving abilities are outstanding.",
     imgPath: "/images/client1.png",
   },
   {
     name: "Wade Warren",
     mentions: "@wadewarren",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+      "Working with Elation was a fantastic experience. They transformed our outdated marketing strategy into a modern, results-driven engine. Their attention to detail and commitment to quality are unmatched. Highly recommend them for any marketing initiatives.",
     imgPath: "/images/client3.png",
   },
   {
     name: "Guy Hawkins",
     mentions: "@guyhawkins",
     review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Elation was an absolute pleasure. Their professionalism, promptness, and dedication to delivering exceptional results were evident throughout our campaign. Their enthusiasm for every facet of marketing truly stands out. If you're seeking to elevate your brand, Elation is the ideal partner.",
     imgPath: "/images/client2.png",
   },
   {
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Elation was a pleasure to work with. They turned our stagnant lead generation into a fresh, powerful pipeline that’s both innovative and effective. Fantastic work overall.",
     imgPath: "/images/client5.png",
   },
   {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Elation’s expertise in digital marketing is truly impressive. They delivered a robust and scalable campaign for our e-commerce site, and our online sales have significantly increased since the launch. They’re true professionals!",
     imgPath: "/images/client4.png",
   },
   {
     name: "Albert Flores",
     mentions: "@albertflores",
     review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+      "Elation was a pleasure to work with. They understood our brand vision perfectly and delivered a marketing strategy that exceeded our expectations. Their skills in both creative and analytics are top-notch.",
     imgPath: "/images/client6.png",
   },
 ];
@@ -260,6 +263,7 @@ const socialImgs = [
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    link: "https://www.linkedin.com/in/aradhyabhartiya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
   },
 ];
 

@@ -63,6 +63,22 @@ const IndustryIcon = ({ type }) => {
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
         <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 011.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 011.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd"/>
       </svg>
+    ),
+    authors: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V4.804z"/>
+      </svg>
+    ),
+    doctors: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+      </svg>
+    ),
+    entrepreneurs: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd"/>
+        <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
+      </svg>
     )
   };
   return icons[type] || icons.d2c;
@@ -528,7 +544,7 @@ const AppShowcase = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="industries-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="industries-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Alcobev Brands */}
           <div className="industry-card group relative overflow-hidden bg-gradient-to-br from-gray-900/90 via-gray-800/70 to-gray-900/90 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 hover:border-orange-500/60 transition-all duration-500 shadow-xl hover:shadow-orange-500/20 w-full h-90">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-600/8 via-transparent to-orange-800/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -644,6 +660,78 @@ const AppShowcase = () => {
                 <div className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
                   <span className="text-red-400 font-semibold text-xs">Solution:</span>
                   <p className="text-gray-300 text-xs mt-1">Refreshed communication strategy, recall-first campaigns, content distribution, and loyalty micro-campaigns.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Authors & Thought Leaders */}
+          <div className="industry-card group relative overflow-hidden bg-gradient-to-br from-gray-900/90 via-gray-800/70 to-gray-900/90 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 hover:border-indigo-500/60 transition-all duration-500 shadow-xl hover:shadow-indigo-500/20 w-full h-90">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/8 via-transparent to-indigo-800/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-4">
+                <div className="industry-icon flex items-center justify-center w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl shadow-lg group-hover:shadow-indigo-500/50 transition-all duration-300">
+                  <IndustryIcon type="authors" />
+                </div>
+                <span className="px-2 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-medium rounded-full">Retainer</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-100 transition-colors">Authors & Thought Leaders</h3>
+              <div className="space-y-3 text-gray-300 text-sm">
+                <div className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                  <span className="text-indigo-400 font-semibold text-xs">Problem:</span>
+                  <p className="text-gray-300 text-xs mt-1">Building recall and credibility beyond a book launch.</p>
+                </div>
+                <div className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                  <span className="text-indigo-400 font-semibold text-xs">Solution:</span>
+                  <p className="text-gray-300 text-xs mt-1">Brand positioning, personal brand engines, strategic content buckets, high-converting video content, and full-funnel campaigns.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Doctors */}
+          <div className="industry-card group relative overflow-hidden bg-gradient-to-br from-gray-900/90 via-gray-800/70 to-gray-900/90 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 hover:border-teal-500/60 transition-all duration-500 shadow-xl hover:shadow-teal-500/20 w-full h-90">
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-600/8 via-transparent to-teal-800/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-4">
+                <div className="industry-icon flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl shadow-lg group-hover:shadow-teal-500/50 transition-all duration-300">
+                  <IndustryIcon type="doctors" />
+                </div>
+                <span className="px-2 py-1 bg-teal-500/20 text-teal-300 text-xs font-medium rounded-full">Retainer</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-teal-100 transition-colors">Doctors</h3>
+              <div className="space-y-3 text-gray-300 text-sm">
+                <div className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                  <span className="text-teal-400 font-semibold text-xs">Problem:</span>
+                  <p className="text-gray-300 text-xs mt-1">Turning medical expertise into trust and consistent patient acquisition.</p>
+                </div>
+                <div className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                  <span className="text-teal-400 font-semibold text-xs">Solution:</span>
+                  <p className="text-gray-300 text-xs mt-1">Audience mapping, positioning frameworks, credibility-led content, ad funnels for leads, and continuous optimization.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Entrepreneurs */}
+          <div className="industry-card group relative overflow-hidden bg-gradient-to-br from-gray-900/90 via-gray-800/70 to-gray-900/90 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 hover:border-yellow-500/60 transition-all duration-500 shadow-xl hover:shadow-yellow-500/20 w-full h-90">
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/8 via-transparent to-yellow-800/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-4">
+                <div className="industry-icon flex items-center justify-center w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl shadow-lg group-hover:shadow-yellow-500/50 transition-all duration-300">
+                  <IndustryIcon type="entrepreneurs" />
+                </div>
+                <span className="px-2 py-1 bg-yellow-500/20 text-yellow-300 text-xs font-medium rounded-full">Retainer</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-100 transition-colors">Entrepreneurs</h3>
+              <div className="space-y-3 text-gray-300 text-sm">
+                <div className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                  <span className="text-yellow-400 font-semibold text-xs">Problem:</span>
+                  <p className="text-gray-300 text-xs mt-1">Lack of consistent content and distribution to establish authority.</p>
+                </div>
+                <div className="p-3 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                  <span className="text-yellow-400 font-semibold text-xs">Solution:</span>
+                  <p className="text-gray-300 text-xs mt-1">Content strategy, multi-platform pipelines, and micro-campaigns designed to scale authority and trust.</p>
                 </div>
               </div>
             </div>

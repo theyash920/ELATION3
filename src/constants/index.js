@@ -10,12 +10,12 @@ const navLinks = [
     link: "#solutions",
   },
   {
-    name: "Values",
-    link: "#values",
+    name: "Resources",
+    link: "/resources",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    name: "Careers",
+    link: "/careers",
   },
 ];
 
@@ -90,6 +90,7 @@ const abilities = [
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
   },
 ];
+
 
 const techStackImgs = [
   {
