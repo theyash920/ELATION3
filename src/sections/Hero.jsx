@@ -109,7 +109,7 @@ const VideoCard = ({ video, index }) => {
           loop
           muted
           playsInline
-        >
+        > 
           <source src={video.videoUrl} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -197,26 +197,61 @@ const Hero = () => {
       ease: "power2.inOut"
     });
 
-    // Scroll-based horizontal movement for video cards
+    // Enhanced scroll-based horizontal movement for video cards
     gsap.utils.toArray(".video-card").forEach((card, index) => {
       const isEven = index % 2 === 0;
+      
+      // Create dynamic movement based on scroll position and direction
       gsap.fromTo(card, 
         { 
-          x: isEven ? -200 : 200,
-          opacity: 0.6 
+          x: isEven ? -300 : 300,
+          opacity: 0.7,
+          rotation: isEven ? -5 : 5
         },
         {
-          x: isEven ? 200 : -200,
+          x: isEven ? 300 : -300,
           opacity: 1,
+          rotation: isEven ? 5 : -5,
           scrollTrigger: {
             trigger: ".video-grid",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 2,
-            ease: "none"
+            start: "top 80%",
+            end: "bottom 20%",
+            scrub: 1.5,
+            ease: "power2.inOut",
+            onUpdate: (self) => {
+              // Add extra movement based on scroll velocity
+              const velocity = self.getVelocity();
+              const extraMove = velocity * 0.001;
+              gsap.to(card, {
+                x: `+=${isEven ? extraMove : -extraMove}`,
+                duration: 0.3,
+                ease: "power2.out"
+              });
+            }
           }
         }
       );
+      
+      // Add continuous floating animation that responds to scroll
+      gsap.to(card, {
+        y: "+=15",
+        duration: 2 + index * 0.3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        scrollTrigger: {
+          trigger: ".video-grid",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 0.5,
+          onToggle: self => {
+            // Modify animation speed based on scroll presence
+            if (self.isActive) {
+              gsap.to(card, { animationDuration: "1.5s", ease: "power1.inOut" });
+            }
+          }
+        }
+      });
     });
   });
 
