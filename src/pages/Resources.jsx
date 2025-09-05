@@ -6,11 +6,9 @@ const Resources = () => {
     <section className="min-h-[60vh] flex items-center justify-center px-6 py-24">
       <div className="text-center max-w-2xl">
         <h1 className="text-4xl md:text-5xl font-bold">Resources</h1>
-        <p className="mt-4 text-white-50 text-lg">
-          This page is intentionally left as a placeholder. You can add blogs, case studies, or downloadable assets here later.
-        </p>
+       
         <div className="mt-10 p-6 rounded-xl bg-[#121212] border border-white/10">
-          <h2 className="text-2xl font-semibold">404 – Not Found (Placeholder)</h2>
+          <h2 className="text-2xl font-semibold">Coming Soon</h2>
           <p className="mt-2 text-white-50">No resources have been added yet. Check back soon!</p>
         </div>
         <button

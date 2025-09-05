@@ -1,13 +1,11 @@
-import boatImg from '../images/boat.jpg';
-
 const navLinks = [
   {
     name: "Home",
-    link: "#hero",
+    link: "/#hero",
   },
   {
-    name: "Solutions",
-    link: "#solutions",
+    name: "Services",
+    link: "/#services",
   },
   {
     name: "Resources",

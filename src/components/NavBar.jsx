@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { navLinks } from "../constants";
 import elationLogo from '../images/elationlogo.jpg';
@@ -26,18 +27,25 @@ const NavBar = () => {
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
-      <a href="#hero" className="logo">
-        <img src={elationLogo} alt="Elation Logo" style={{ height: '100px', width: '56px', borderRadius: '12px', boxShadow: '0 4px 16px rgba(0,0,0,0.15)', marginRight: '16px', objectFit: 'cover' }} />
-      </a>
+      <Link to="/#hero" className="logo">
+        <img src={elationLogo} alt="Elation Logo" style={{ height: '64px', width: '56px', borderRadius: '12px', boxShadow: '0 4px 16px rgba(0,0,0,0.15)', marginRight: '16px', objectFit: 'cover' }} />
+      </Link>
 
       <nav className="desktop">
         <ul>
           {navLinks.map(({ link, name }) => (
             <li key={name} className="group">
-              <a href={link}>
-                <span>{name}</span>
-                <span className="underline" />
-              </a>
+              {link.startsWith('/') ? (
+                <Link to={link}>
+                  <span>{name}</span>
+                  <span className="underline" />
+                </Link>
+              ) : (
+                <a href={link}>
+                  <span>{name}</span>
+                  <span className="underline" />
+                </a>
+              )}
             </li>
           ))}
         </ul>
