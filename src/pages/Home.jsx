@@ -1,6 +1,6 @@
 import Testimonials from "../sections/Testimonials";
 import Footer from "../sections/Footer";
-import Contact from "../sections/Contact";
+// import Contact from "../sections/Contact";
 import Solutions from "../sections/Solutions";
 import Hero from "../sections/Hero";
 import ShowcaseSection from "../sections/ShowcaseSection";
@@ -13,7 +13,7 @@ const Home = () => (
     <LogoShowcase />
     <Solutions />
     <Testimonials />
-    <Contact />
+    
   </>
 );
 
